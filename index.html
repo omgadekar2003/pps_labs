@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawar Public School Nanded City - Virtual Labs</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="light-mode">
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <button class="theme-btn" onclick="toggleTheme('light')" title="Light Mode">
+            <i class="fas fa-sun"></i>
+        </button>
+        <button class="theme-btn" onclick="toggleTheme('dark')" title="Dark Mode">
+            <i class="fas fa-moon"></i>
+        </button>
+        <button class="theme-btn" onclick="toggleTheme('grayscale')" title="Black & White Mode">
+            <i class="fas fa-adjust"></i>
+        </button>
+    </div>
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="atom-loader">
+                <div class="electron"></div>
+                <div class="electron"></div>
+                <div class="electron"></div>
+            </div>
+            <h3>Loading Virtual Labs</h3>
+            <p>Pawar Public School Nanded City</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-school"></i>
+                <div class="brand-text">
+                    <h2>PAWAR PUBLIC SCHOOL NANDED CITY</h2>
+                    <p>Excellence in Education</p>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#" class="active" onclick="showSection('home')">Home</a></li>
+                <li><a href="#" onclick="showSection('labs')">Our Labs</a></li>
+                <li><a href="#" onclick="showSection('floor-plan')">Floor Plan</a></li>
+                <li><a href="#" onclick="showSection('about')">About</a></li>
+            </ul>
+            <button class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <div class="hero-background">
+                    <div class="floating-element el1"></div>
+                    <div class="floating-element el2"></div>
+                    <div class="floating-element el3"></div>
+                </div>
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="hero-title">WELCOME TO OUR <span class="highlight">VIRTUAL LABS</span></h1>
+                        <p class="hero-subtitle">Interactive Laboratory Experience for Students</p>
+                        <p class="hero-description">
+                            Explore our state-of-the-art laboratories through this interactive virtual tour. 
+                            Discover Science, Mathematics, Social Science, and Computer Science labs with 
+                            detailed information about equipment, scientists, and learning resources.
+                        </p>
+                        <div class="hero-stats">
+                            <div class="stat">
+                                <h3>4</h3>
+                                <p>Laboratories</p>
+                            </div>
+                            <div class="stat">
+                                <h3>1-10</h3>
+                                <p>Grades</p>
+                            </div>
+                            <div class="stat">
+                                <h3>20+</h3>
+                                <p>Scientists</p>
+                            </div>
+                        </div>
+                        <button class="cta-button" onclick="showSection('labs')">
+                            Explore Our Labs
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    <div class="hero-image">
+                        <div class="lab-preview">
+                            <div class="preview-card" data-lab="science">
+                                <i class="fas fa-flask"></i>
+                                <h4>Science Lab</h4>
+                            </div>
+                            <div class="preview-card" data-lab="math">
+                                <i class="fas fa-calculator"></i>
+                                <h4>Math Lab</h4>
+                            </div>
+                            <div class="preview-card" data-lab="social">
+                                <i class="fas fa-globe-asia"></i>
+                                <h4>Social Science</h4>
+                            </div>
+                            <div class="preview-card" data-lab="computer">
+                                <i class="fas fa-laptop-code"></i>
+                                <h4>Computer Lab</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features">
+                <div class="container">
+                    <h2 class="section-title">Why Virtual Labs?</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h3>24/7 Access</h3>
+                            <p>Access laboratory information anytime, anywhere</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h3>Grade Specific</h3>
+                            <p>Content tailored for grade 1-10 students</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <h3>Educational</h3>
+                            <p>Learn about scientists and their contributions</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3>Collaborative</h3>
+                            <p>Share knowledge with classmates and teachers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Labs Section -->
+        <section id="labs" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1 class="section-title">OUR LABORATORIES</h1>
+                    <p class="section-subtitle">Click on any lab to explore</p>
+                </div>
+
+                <div class="labs-grid">
+                    <!-- Science Lab -->
+                    <div class="lab-card" onclick="openSubject('science')">
+                        <div class="card-header">
+                            <div class="card-icon science">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <div class="card-badge">Most Popular</div>
+                        </div>
+                        <div class="card-content">
+                            <h3>SCIENCE LAB</h3>
+                            <p class="card-subtitle">Physics, Chemistry, Biology</p>
+                            <p class="card-description">
+                                Explore the wonders of science through our fully-equipped laboratory. 
+                                Learn about famous scientists and their groundbreaking discoveries.
+                            </p>
+                            <div class="card-features">
+                                <span><i class="fas fa-microscope"></i> Modern Equipment</span>
+                                <span><i class="fas fa-user-graduate"></i> 5 Scientists</span>
+                                <span><i class="fas fa-building"></i> Ground Floor</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="card-button">Explore Now <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Mathematics Lab -->
+                    <div class="lab-card" onclick="openSubject('mathematics')">
+                        <div class="card-header">
+                            <div class="card-icon math">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>MATHEMATICS LAB</h3>
+                            <p class="card-subtitle">Geometry, Algebra, Statistics</p>
+                            <p class="card-description">
+                                Discover the beauty of mathematics through interactive models, 
+                                puzzles, and tools that make learning fun and engaging.
+                            </p>
+                            <div class="card-features">
+                                <span><i class="fas fa-shapes"></i> 3D Models</span>
+                                <span><i class="fas fa-user-graduate"></i> 5 Mathematicians</span>
+                                <span><i class="fas fa-building"></i> 1st Floor</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="card-button">Explore Now <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Social Science Lab -->
+                    <div class="lab-card" onclick="openSubject('social-science')">
+                        <div class="card-header">
+                            <div class="card-icon social">
+                                <i class="fas fa-globe-asia"></i>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>SOCIAL SCIENCE LAB</h3>
+                            <p class="card-subtitle">History, Geography, Civics</p>
+                            <p class="card-description">
+                                Travel through time and space with our interactive maps, 
+                                historical artifacts, and civic education resources.
+                            </p>
+                            <div class="card-features">
+                                <span><i class="fas fa-map"></i> Interactive Maps</span>
+                                <span><i class="fas fa-user-graduate"></i> 5 Social Scientists</span>
+                                <span><i class="fas fa-building"></i> 1st Floor</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="card-button">Explore Now <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Computer Science Lab -->
+                    <div class="lab-card" onclick="openSubject('computer-science')">
+                        <div class="card-header">
+                            <div class="card-icon computer">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div class="card-badge">New</div>
+                        </div>
+                        <div class="card-content">
+                            <h3>COMPUTER SCIENCE LAB</h3>
+                            <p class="card-subtitle">Coding, AI, Robotics</p>
+                            <p class="card-description">
+                                Step into the future with our advanced computer lab featuring 
+                                programming stations, robotics kits, and AI learning tools.
+                            </p>
+                            <div class="card-features">
+                                <span><i class="fas fa-robot"></i> Robotics Kit</span>
+                                <span><i class="fas fa-user-graduate"></i> 5 Computer Scientists</span>
+                                <span><i class="fas fa-building"></i> 2nd Floor</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="card-button">Explore Now <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subject Detail Section (Hidden by default) -->
+        <section id="subject-detail" class="section" style="display: none;">
+            <div class="container">
+                <div class="subject-header">
+                    <button class="back-button" onclick="goBackToLabs()">
+                        <i class="fas fa-arrow-left"></i> Back to Labs
+                    </button>
+                    <div class="subject-title-container">
+                        <h1 id="subject-title">Science Laboratory</h1>
+                        <p id="subject-subtitle">Grades 1st</p>
+                    </div>
+                </div>
+
+                <!-- Science Branches (Only for Science) -->
+                <div id="science-branches" class="branches-grid" style="display: none;">
+                    <h3 class="branches-title">Select Science Branch:</h3>
+                    <div class="branches-container">
+                        <div class="branch-card" onclick="loadScientists('physics')">
+                            <div class="branch-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <h4>PHYSICS</h4>
+                            <p>Forces, Energy, Motion</p>
+                        </div>
+                        <div class="branch-card" onclick="loadScientists('chemistry')">
+                            <div class="branch-icon">
+                                <i class="fas fa-atom"></i>
+                            </div>
+                            <h4>CHEMISTRY</h4>
+                            <p>Elements, Reactions, Bonds</p>
+                        </div>
+                        <div class="branch-card" onclick="loadScientists('biology')">
+                            <div class="branch-icon">
+                                <i class="fas fa-dna"></i>
+                            </div>
+                            <h4>BIOLOGY</h4>
+                            <p>Life, Cells, Organisms</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scientists Grid -->
+                <div class="scientists-section">
+                    <div class="section-header">
+                        <h2 id="scientists-title">Famous Scientists</h2>
+                        <p class="section-subtitle">Click on any scientist to learn more on Wikipedia</p>
+                    </div>
+                    <div id="scientists-grid" class="scientists-grid">
+                        <!-- Scientists will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Lab Information -->
+                <div class="lab-info-section">
+                    <h3>Laboratory Information</h3>
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h4>Grade Levels</h4>
+                            <p>1st to 10th Grade</p>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-users"></i>
+                            <h4>Capacity</h4>
+                            <p>30 Students</p>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-clock"></i>
+                            <h4>Timing</h4>
+                            <p>8:00 AM - 3:00 PM</p>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-tools"></i>
+                            <h4>Equipment</h4>
+                            <p>Modern & Safe</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Floor Plan Section -->
+        <section id="floor-plan" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1 class="section-title">LAB LOCATIONS</h1>
+                    <p class="section-subtitle">Where each lab is located in our school</p>
+                </div>
+
+                <div class="floor-plan-container">
+                    <div class="floor-tabs">
+                        <button class="floor-tab active" onclick="showFloor('ground')">Ground Floor</button>
+                        <button class="floor-tab" onclick="showFloor('first')">First Floor</button>
+                        <button class="floor-tab" onclick="showFloor('second')">Second Floor</button>
+                    </div>
+
+                    <div class="floor-content">
+                        <!-- Ground Floor -->
+                        <div id="ground-floor" class="floor active">
+                            <div class="floor-plan">
+                                <div class="floor-visual">
+                                    <div class="building">
+                                        <div class="room" style="top: 20%; left: 20%;" data-lab="science">
+                                            <div class="room-label">Science Lab</div>
+                                            <div class="room-info">Physics, Chemistry, Biology</div>
+                                        </div>
+                                        <div class="room" style="top: 60%; left: 60%;" data-lab="library">
+                                            <div class="room-label">Library</div>
+                                            <div class="room-info">Reference Section</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="floor-details">
+                                    <h3>Ground Floor Labs</h3>
+                                    <div class="lab-list">
+                                        <div class="floor-lab-item">
+                                            <div class="lab-marker science"></div>
+                                            <div class="lab-info">
+                                                <h4>Science Laboratory</h4>
+                                                <p>Includes Physics, Chemistry, and Biology sections</p>
+                                                <p><i class="fas fa-users"></i> Capacity: 30 students</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- First Floor -->
+                        <div id="first-floor" class="floor">
+                            <div class="floor-plan">
+                                <div class="floor-visual">
+                                    <div class="building">
+                                        <div class="room" style="top: 30%; left: 30%;" data-lab="math">
+                                            <div class="room-label">Math Lab</div>
+                                            <div class="room-info">Geometry & Algebra</div>
+                                        </div>
+                                        <div class="room" style="top: 60%; left: 60%;" data-lab="social">
+                                            <div class="room-label">Social Science</div>
+                                            <div class="room-info">History & Geography</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="floor-details">
+                                    <h3>First Floor Labs</h3>
+                                    <div class="lab-list">
+                                        <div class="floor-lab-item">
+                                            <div class="lab-marker math"></div>
+                                            <div class="lab-info">
+                                                <h4>Mathematics Laboratory</h4>
+                                                <p>Interactive models and tools for mathematics</p>
+                                                <p><i class="fas fa-users"></i> Capacity: 25 students</p>
+                                            </div>
+                                        </div>
+                                        <div class="floor-lab-item">
+                                            <div class="lab-marker social"></div>
+                                            <div class="lab-info">
+                                                <h4>Social Science Laboratory</h4>
+                                                <p>Maps, charts, and historical artifacts</p>
+                                                <p><i class="fas fa-users"></i> Capacity: 25 students</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Second Floor -->
+                        <div id="second-floor" class="floor">
+                            <div class="floor-plan">
+                                <div class="floor-visual">
+                                    <div class="building">
+                                        <div class="room" style="top: 40%; left: 40%;" data-lab="computer">
+                                            <div class="room-label">Computer Lab</div>
+                                            <div class="room-info">Coding & Robotics</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="floor-details">
+                                    <h3>Second Floor Labs</h3>
+                                    <div class="lab-list">
+                                        <div class="floor-lab-item">
+                                            <div class="lab-marker computer"></div>
+                                            <div class="lab-info">
+                                                <h4>Computer Science Laboratory</h4>
+                                                <p>Modern computers with programming software</p>
+                                                <p><i class="fas fa-users"></i> Capacity: 40 students</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1 class="section-title">ABOUT THIS PROJECT</h1>
+                    <p class="section-subtitle">Virtual Labs - Pawar Public School Nanded City</p>
+                </div>
+
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Project Overview</h3>
+                        <p>
+                            This Virtual Labs website was developed as a school project to showcase 
+                            the laboratories of Pawar Public School Nanded City for students.
+                        </p>
+                        <p>
+                            The website provides an interactive platform where students can explore 
+                            different labs, learn about famous scientists in each field, and understand 
+                            the location and facilities of each laboratory.
+                        </p>
+                        
+                        <h3>Features</h3>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> Interactive lab exploration</li>
+                            <li><i class="fas fa-check"></i> Information about famous scientists</li>
+                            <li><i class="fas fa-check"></i> Floor-wise lab locations</li>
+                            <li><i class="fas fa-check"></i> Wikipedia integration for scientists</li>
+                            <li><i class="fas fa-check"></i> Modern, responsive design</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="about-image">
+                        <div class="image-container">
+                            <i class="fas fa-school"></i>
+                            <h3>Pawar Public School</h3>
+                            <p>Empowering Future Generations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-school"></i>
+                    <h3>PAWAR PUBLIC SCHOOL NANDED CITY</h3>
+                    <p>Virtual Laboratory Project</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="#" onclick="showSection('home')">Home</a>
+                    <a href="#" onclick="showSection('labs')">Labs</a>
+                    <a href="#" onclick="showSection('floor-plan')">Floor Plan</a>
+                    <a href="#" onclick="showSection('about')">About</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Pawar Public School Nanded City - Virtual Labs. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
