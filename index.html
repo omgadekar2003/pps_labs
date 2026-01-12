@@ -73,12 +73,11 @@
                         <p class="hero-subtitle">Interactive Laboratory Experience for Students</p>
                         <p class="hero-description">
                             Explore our state-of-the-art laboratories through this interactive virtual tour. 
-                            Discover Science, Mathematics, Social Science, and Computer Science labs with 
-                            detailed information about equipment, scientists, and learning resources.
+                            Discover our 7 specialized labs with detailed information about equipment, scientists, and learning resources.
                         </p>
                         <div class="hero-stats">
                             <div class="stat">
-                                <h3>4</h3>
+                                <h3>7</h3>
                                 <p>Laboratories</p>
                             </div>
                             <div class="stat">
@@ -86,7 +85,7 @@
                                 <p>Grades</p>
                             </div>
                             <div class="stat">
-                                <h3>20+</h3>
+                                <h3>30+</h3>
                                 <p>Scientists</p>
                             </div>
                         </div>
@@ -97,21 +96,33 @@
                     </div>
                     <div class="hero-image">
                         <div class="lab-preview">
-                            <div class="preview-card" data-lab="science">
+                            <div class="preview-card" onclick="openSubject('chemistry')">
                                 <i class="fas fa-flask"></i>
-                                <h4>Science Lab</h4>
+                                <h4>Chemistry Lab</h4>
                             </div>
-                            <div class="preview-card" data-lab="math">
+                            <div class="preview-card" onclick="openSubject('physics')">
+                                <i class="fas fa-atom"></i>
+                                <h4>Physics Lab</h4>
+                            </div>
+                            <div class="preview-card" onclick="openSubject('mathematics')">
                                 <i class="fas fa-calculator"></i>
                                 <h4>Math Lab</h4>
                             </div>
-                            <div class="preview-card" data-lab="social">
-                                <i class="fas fa-globe-asia"></i>
-                                <h4>Social Science</h4>
-                            </div>
-                            <div class="preview-card" data-lab="computer">
+                            <div class="preview-card" onclick="openSubject('computer-science')">
                                 <i class="fas fa-laptop-code"></i>
                                 <h4>Computer Lab</h4>
+                            </div>
+                            <div class="preview-card" onclick="openSubject('biology')">
+                                <i class="fas fa-dna"></i>
+                                <h4>Biology Lab</h4>
+                            </div>
+                            <div class="preview-card" onclick="openSubject('social-science')">
+                                <i class="fas fa-globe-asia"></i>
+                                <h4>SST Lab</h4>
+                            </div>
+                            <div class="preview-card" onclick="openSubject('stem')">
+                                <i class="fas fa-robot"></i>
+                                <h4>STEM Lab</h4>
                             </div>
                         </div>
                     </div>
@@ -164,25 +175,49 @@
                 </div>
 
                 <div class="labs-grid">
-                    <!-- Science Lab -->
-                    <div class="lab-card" onclick="openSubject('science')">
+                    <!-- Chemistry Lab -->
+                    <div class="lab-card" onclick="openSubject('chemistry')">
                         <div class="card-header">
-                            <div class="card-icon science">
+                            <div class="card-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
                                 <i class="fas fa-flask"></i>
                             </div>
-                            <div class="card-badge">Most Popular</div>
+                            <div class="card-badge">Ground Floor</div>
                         </div>
                         <div class="card-content">
-                            <h3>SCIENCE LAB</h3>
-                            <p class="card-subtitle">Physics, Chemistry, Biology</p>
+                            <h3>CHEMISTRY LAB</h3>
+                            <p class="card-subtitle">Acharya Prafulla Chandra Lab</p>
                             <p class="card-description">
-                                Explore the wonders of science through our fully-equipped laboratory. 
-                                Learn about famous scientists and their groundbreaking discoveries.
+                                Explore chemical reactions, elements, and compounds in our modern chemistry laboratory.
                             </p>
                             <div class="card-features">
-                                <span><i class="fas fa-microscope"></i> Modern Equipment</span>
-                                <span><i class="fas fa-user-graduate"></i> 5 Scientists</span>
+                                <span><i class="fas fa-flask"></i> Chemical Equipment</span>
+                                <span><i class="fas fa-user-graduate"></i> 5 Chemists</span>
                                 <span><i class="fas fa-building"></i> Ground Floor</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="card-button">Explore Now <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Physics Lab -->
+                    <div class="lab-card" onclick="openSubject('physics')">
+                        <div class="card-header">
+                            <div class="card-icon" style="background: linear-gradient(135deg, #3498db, #2980b9);">
+                                <i class="fas fa-atom"></i>
+                            </div>
+                            <div class="card-badge">First Floor</div>
+                        </div>
+                        <div class="card-content">
+                            <h3>PHYSICS LAB</h3>
+                            <p class="card-subtitle">Chandrashekhar Venkata Raman Lab</p>
+                            <p class="card-description">
+                                Discover the laws of motion, energy, and matter through interactive experiments.
+                            </p>
+                            <div class="card-features">
+                                <span><i class="fas fa-bolt"></i> Physics Equipment</span>
+                                <span><i class="fas fa-user-graduate"></i> 5 Physicists</span>
+                                <span><i class="fas fa-building"></i> First Floor</span>
                             </div>
                         </div>
                         <div class="card-footer">
@@ -193,46 +228,21 @@
                     <!-- Mathematics Lab -->
                     <div class="lab-card" onclick="openSubject('mathematics')">
                         <div class="card-header">
-                            <div class="card-icon math">
+                            <div class="card-icon" style="background: linear-gradient(135deg, #e74c3c, #c0392b);">
                                 <i class="fas fa-calculator"></i>
                             </div>
+                            <div class="card-badge">Third Floor</div>
                         </div>
                         <div class="card-content">
                             <h3>MATHEMATICS LAB</h3>
-                            <p class="card-subtitle">Geometry, Algebra, Statistics</p>
+                            <p class="card-subtitle">Interactive Learning Center</p>
                             <p class="card-description">
-                                Discover the beauty of mathematics through interactive models, 
-                                puzzles, and tools that make learning fun and engaging.
+                                Explore geometry, algebra, and statistics through hands-on activities and models.
                             </p>
                             <div class="card-features">
                                 <span><i class="fas fa-shapes"></i> 3D Models</span>
                                 <span><i class="fas fa-user-graduate"></i> 5 Mathematicians</span>
-                                <span><i class="fas fa-building"></i> 1st Floor</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <button class="card-button">Explore Now <i class="fas fa-arrow-right"></i></button>
-                        </div>
-                    </div>
-
-                    <!-- Social Science Lab -->
-                    <div class="lab-card" onclick="openSubject('social-science')">
-                        <div class="card-header">
-                            <div class="card-icon social">
-                                <i class="fas fa-globe-asia"></i>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h3>SOCIAL SCIENCE LAB</h3>
-                            <p class="card-subtitle">History, Geography, Civics</p>
-                            <p class="card-description">
-                                Travel through time and space with our interactive maps, 
-                                historical artifacts, and civic education resources.
-                            </p>
-                            <div class="card-features">
-                                <span><i class="fas fa-map"></i> Interactive Maps</span>
-                                <span><i class="fas fa-user-graduate"></i> 5 Social Scientists</span>
-                                <span><i class="fas fa-building"></i> 1st Floor</span>
+                                <span><i class="fas fa-building"></i> Third Floor</span>
                             </div>
                         </div>
                         <div class="card-footer">
@@ -243,22 +253,96 @@
                     <!-- Computer Science Lab -->
                     <div class="lab-card" onclick="openSubject('computer-science')">
                         <div class="card-header">
-                            <div class="card-icon computer">
+                            <div class="card-icon" style="background: linear-gradient(135deg, #1abc9c, #16a085);">
                                 <i class="fas fa-laptop-code"></i>
                             </div>
-                            <div class="card-badge">New</div>
+                            <div class="card-badge" style="background: var(--accent);">Multiple Labs</div>
                         </div>
                         <div class="card-content">
-                            <h3>COMPUTER SCIENCE LAB</h3>
-                            <p class="card-subtitle">Coding, AI, Robotics</p>
+                            <h3>COMPUTER LABS</h3>
+                            <p class="card-subtitle">Bill Gates, Steve Jobs & Vijay Bhatkar Labs</p>
                             <p class="card-description">
-                                Step into the future with our advanced computer lab featuring 
-                                programming stations, robotics kits, and AI learning tools.
+                                Learn coding, AI, and robotics in our state-of-the-art computer laboratories.
                             </p>
                             <div class="card-features">
-                                <span><i class="fas fa-robot"></i> Robotics Kit</span>
+                                <span><i class="fas fa-desktop"></i> Modern Computers</span>
                                 <span><i class="fas fa-user-graduate"></i> 5 Computer Scientists</span>
-                                <span><i class="fas fa-building"></i> 2nd Floor</span>
+                                <span><i class="fas fa-building"></i> 1st & 2nd Floor</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="card-button">Explore Now <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Biology Lab -->
+                    <div class="lab-card" onclick="openSubject('biology')">
+                        <div class="card-header">
+                            <div class="card-icon" style="background: linear-gradient(135deg, #2ecc71, #27ae60);">
+                                <i class="fas fa-dna"></i>
+                            </div>
+                            <div class="card-badge">Second Floor</div>
+                        </div>
+                        <div class="card-content">
+                            <h3>BIOLOGY LAB</h3>
+                            <p class="card-subtitle">Jagdishchandra Bose Lab</p>
+                            <p class="card-description">
+                                Study life sciences, cells, organisms, and ecosystems in our biology laboratory.
+                            </p>
+                            <div class="card-features">
+                                <span><i class="fas fa-microscope"></i> Microscopes</span>
+                                <span><i class="fas fa-user-graduate"></i> 5 Biologists</span>
+                                <span><i class="fas fa-building"></i> Second Floor</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="card-button">Explore Now <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Social Science Lab -->
+                    <div class="lab-card" onclick="openSubject('social-science')">
+                        <div class="card-header">
+                            <div class="card-icon" style="background: linear-gradient(135deg, #f39c12, #d35400);">
+                                <i class="fas fa-globe-asia"></i>
+                            </div>
+                            <div class="card-badge">Second Floor</div>
+                        </div>
+                        <div class="card-content">
+                            <h3>SOCIAL SCIENCE LAB</h3>
+                            <p class="card-subtitle">History, Geography, Civics</p>
+                            <p class="card-description">
+                                Explore maps, historical artifacts, and civic education through interactive resources.
+                            </p>
+                            <div class="card-features">
+                                <span><i class="fas fa-map"></i> Interactive Maps</span>
+                                <span><i class="fas fa-user-graduate"></i> 5 Social Scientists</span>
+                                <span><i class="fas fa-building"></i> Second Floor</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="card-button">Explore Now <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- STEM Lab -->
+                    <div class="lab-card" onclick="openSubject('stem')">
+                        <div class="card-header">
+                            <div class="card-icon" style="background: linear-gradient(135deg, #34495e, #2c3e50);">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="card-badge" style="background: var(--warning);">New</div>
+                        </div>
+                        <div class="card-content">
+                            <h3>STEM LAB</h3>
+                            <p class="card-subtitle">Narayanmurthy Lab</p>
+                            <p class="card-description">
+                                Integrate Science, Technology, Engineering, and Mathematics through innovative projects.
+                            </p>
+                            <div class="card-features">
+                                <span><i class="fas fa-cogs"></i> Robotics Kits</span>
+                                <span><i class="fas fa-user-graduate"></i> 5 STEM Innovators</span>
+                                <span><i class="fas fa-building"></i> Third Floor</span>
                             </div>
                         </div>
                         <div class="card-footer">
@@ -269,7 +353,7 @@
             </div>
         </section>
 
-        <!-- Subject Detail Section (Hidden by default) -->
+        <!-- Subject Detail Section -->
         <section id="subject-detail" class="section" style="display: none;">
             <div class="container">
                 <div class="subject-header">
@@ -277,36 +361,8 @@
                         <i class="fas fa-arrow-left"></i> Back to Labs
                     </button>
                     <div class="subject-title-container">
-                        <h1 id="subject-title">Science Laboratory</h1>
-                        <p id="subject-subtitle">Grades 1st</p>
-                    </div>
-                </div>
-
-                <!-- Science Branches (Only for Science) -->
-                <div id="science-branches" class="branches-grid" style="display: none;">
-                    <h3 class="branches-title">Select Science Branch:</h3>
-                    <div class="branches-container">
-                        <div class="branch-card" onclick="loadScientists('physics')">
-                            <div class="branch-icon">
-                                <i class="fas fa-bolt"></i>
-                            </div>
-                            <h4>PHYSICS</h4>
-                            <p>Forces, Energy, Motion</p>
-                        </div>
-                        <div class="branch-card" onclick="loadScientists('chemistry')">
-                            <div class="branch-icon">
-                                <i class="fas fa-atom"></i>
-                            </div>
-                            <h4>CHEMISTRY</h4>
-                            <p>Elements, Reactions, Bonds</p>
-                        </div>
-                        <div class="branch-card" onclick="loadScientists('biology')">
-                            <div class="branch-icon">
-                                <i class="fas fa-dna"></i>
-                            </div>
-                            <h4>BIOLOGY</h4>
-                            <p>Life, Cells, Organisms</p>
-                        </div>
+                        <h1 id="subject-title">Laboratory</h1>
+                        <p id="subject-subtitle">Grades 1-10</p>
                     </div>
                 </div>
 
@@ -333,7 +389,7 @@
                         <div class="info-card">
                             <i class="fas fa-users"></i>
                             <h4>Capacity</h4>
-                            <p>30 Students</p>
+                            <p>30-40 Students</p>
                         </div>
                         <div class="info-card">
                             <i class="fas fa-clock"></i>
@@ -363,6 +419,7 @@
                         <button class="floor-tab active" onclick="showFloor('ground')">Ground Floor</button>
                         <button class="floor-tab" onclick="showFloor('first')">First Floor</button>
                         <button class="floor-tab" onclick="showFloor('second')">Second Floor</button>
+                        <button class="floor-tab" onclick="showFloor('third')">Third Floor</button>
                     </div>
 
                     <div class="floor-content">
@@ -371,13 +428,9 @@
                             <div class="floor-plan">
                                 <div class="floor-visual">
                                     <div class="building">
-                                        <div class="room" style="top: 20%; left: 20%;" data-lab="science">
-                                            <div class="room-label">Science Lab</div>
-                                            <div class="room-info">Physics, Chemistry, Biology</div>
-                                        </div>
-                                        <div class="room" style="top: 60%; left: 60%;" data-lab="library">
-                                            <div class="room-label">Library</div>
-                                            <div class="room-info">Reference Section</div>
+                                        <div class="room" style="top: 40%; left: 40%;" data-lab="chemistry">
+                                            <div class="room-label">Chemistry Lab</div>
+                                            <div class="room-info">Acharya Prafulla Chandra</div>
                                         </div>
                                     </div>
                                 </div>
@@ -385,10 +438,10 @@
                                     <h3>Ground Floor Labs</h3>
                                     <div class="lab-list">
                                         <div class="floor-lab-item">
-                                            <div class="lab-marker science"></div>
+                                            <div class="lab-marker" style="background: #9b59b6;"></div>
                                             <div class="lab-info">
-                                                <h4>Science Laboratory</h4>
-                                                <p>Includes Physics, Chemistry, and Biology sections</p>
+                                                <h4>Chemistry Laboratory</h4>
+                                                <p>Acharya Prafulla Chandra Lab - Chemical experiments and research</p>
                                                 <p><i class="fas fa-users"></i> Capacity: 30 students</p>
                                             </div>
                                         </div>
@@ -402,13 +455,21 @@
                             <div class="floor-plan">
                                 <div class="floor-visual">
                                     <div class="building">
-                                        <div class="room" style="top: 30%; left: 30%;" data-lab="math">
-                                            <div class="room-label">Math Lab</div>
-                                            <div class="room-info">Geometry & Algebra</div>
+                                        <div class="room" style="top: 30%; left: 30%;" data-lab="physics">
+                                            <div class="room-label">Physics Lab</div>
+                                            <div class="room-info">Chandrashekhar Raman</div>
                                         </div>
-                                        <div class="room" style="top: 60%; left: 60%;" data-lab="social">
-                                            <div class="room-label">Social Science</div>
-                                            <div class="room-info">History & Geography</div>
+                                        <div class="room" style="top: 60%; left: 20%;" data-lab="computer">
+                                            <div class="room-label">Computer Lab</div>
+                                            <div class="room-info">Steve Jobs Lab</div>
+                                        </div>
+                                        <div class="room" style="top: 60%; left: 60%;" data-lab="computer">
+                                            <div class="room-label">Computer Lab</div>
+                                            <div class="room-info">Vijay Bhatkar Lab</div>
+                                        </div>
+                                        <div class="room" style="top: 30%; left: 60%;" data-lab="library">
+                                            <div class="room-label">Library</div>
+                                            <div class="room-info">Ravindranath Tagore</div>
                                         </div>
                                     </div>
                                 </div>
@@ -416,19 +477,27 @@
                                     <h3>First Floor Labs</h3>
                                     <div class="lab-list">
                                         <div class="floor-lab-item">
-                                            <div class="lab-marker math"></div>
+                                            <div class="lab-marker" style="background: #3498db;"></div>
                                             <div class="lab-info">
-                                                <h4>Mathematics Laboratory</h4>
-                                                <p>Interactive models and tools for mathematics</p>
-                                                <p><i class="fas fa-users"></i> Capacity: 25 students</p>
+                                                <h4>Physics Laboratory</h4>
+                                                <p>Chandrashekhar Venkata Raman Lab - Physics experiments</p>
+                                                <p><i class="fas fa-users"></i> Capacity: 30 students</p>
                                             </div>
                                         </div>
                                         <div class="floor-lab-item">
-                                            <div class="lab-marker social"></div>
+                                            <div class="lab-marker" style="background: #1abc9c;"></div>
                                             <div class="lab-info">
-                                                <h4>Social Science Laboratory</h4>
-                                                <p>Maps, charts, and historical artifacts</p>
-                                                <p><i class="fas fa-users"></i> Capacity: 25 students</p>
+                                                <h4>Computer Lab - Steve Jobs</h4>
+                                                <p>Programming and software development</p>
+                                                <p><i class="fas fa-users"></i> Capacity: 40 students</p>
+                                            </div>
+                                        </div>
+                                        <div class="floor-lab-item">
+                                            <div class="lab-marker" style="background: #1abc9c;"></div>
+                                            <div class="lab-info">
+                                                <h4>Computer Lab - Vijay Bhatkar</h4>
+                                                <p>Advanced computing and research</p>
+                                                <p><i class="fas fa-users"></i> Capacity: 40 students</p>
                                             </div>
                                         </div>
                                     </div>
@@ -441,9 +510,21 @@
                             <div class="floor-plan">
                                 <div class="floor-visual">
                                     <div class="building">
-                                        <div class="room" style="top: 40%; left: 40%;" data-lab="computer">
+                                        <div class="room" style="top: 30%; left: 30%;" data-lab="biology">
+                                            <div class="room-label">Biology Lab</div>
+                                            <div class="room-info">Jagdishchandra Bose</div>
+                                        </div>
+                                        <div class="room" style="top: 60%; left: 30%;" data-lab="computer">
                                             <div class="room-label">Computer Lab</div>
-                                            <div class="room-info">Coding & Robotics</div>
+                                            <div class="room-info">Bill Gates Lab</div>
+                                        </div>
+                                        <div class="room" style="top: 45%; left: 60%;" data-lab="sst">
+                                            <div class="room-label">SST Lab</div>
+                                            <div class="room-info">Social Studies</div>
+                                        </div>
+                                        <div class="room" style="top: 75%; left: 60%;" data-lab="av">
+                                            <div class="room-label">AV Hall</div>
+                                            <div class="room-info">P. L. Deshpande</div>
                                         </div>
                                     </div>
                                 </div>
@@ -451,11 +532,78 @@
                                     <h3>Second Floor Labs</h3>
                                     <div class="lab-list">
                                         <div class="floor-lab-item">
-                                            <div class="lab-marker computer"></div>
+                                            <div class="lab-marker" style="background: #2ecc71;"></div>
                                             <div class="lab-info">
-                                                <h4>Computer Science Laboratory</h4>
-                                                <p>Modern computers with programming software</p>
+                                                <h4>Biology Laboratory</h4>
+                                                <p>Jagdishchandra Bose Lab - Life sciences research</p>
+                                                <p><i class="fas fa-users"></i> Capacity: 30 students</p>
+                                            </div>
+                                        </div>
+                                        <div class="floor-lab-item">
+                                            <div class="lab-marker" style="background: #1abc9c;"></div>
+                                            <div class="lab-info">
+                                                <h4>Computer Lab - Bill Gates</h4>
+                                                <p>Advanced computing and AI research</p>
                                                 <p><i class="fas fa-users"></i> Capacity: 40 students</p>
+                                            </div>
+                                        </div>
+                                        <div class="floor-lab-item">
+                                            <div class="lab-marker" style="background: #f39c12;"></div>
+                                            <div class="lab-info">
+                                                <h4>Social Science Lab</h4>
+                                                <p>History, Geography, and Civics studies</p>
+                                                <p><i class="fas fa-users"></i> Capacity: 30 students</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Third Floor -->
+                        <div id="third-floor" class="floor">
+                            <div class="floor-plan">
+                                <div class="floor-visual">
+                                    <div class="building">
+                                        <div class="room" style="top: 30%; left: 30%;" data-lab="math">
+                                            <div class="room-label">Math Lab</div>
+                                            <div class="room-info">Interactive Learning</div>
+                                        </div>
+                                        <div class="room" style="top: 60%; left: 30%;" data-lab="stem">
+                                            <div class="room-label">STEM Lab</div>
+                                            <div class="room-info">Narayanmurthy Lab</div>
+                                        </div>
+                                        <div class="room" style="top: 45%; left: 60%;" data-lab="av3">
+                                            <div class="room-label">AV Hall</div>
+                                            <div class="room-info">Pandit Ravishankar Hall</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="floor-details">
+                                    <h3>Third Floor Labs</h3>
+                                    <div class="lab-list">
+                                        <div class="floor-lab-item">
+                                            <div class="lab-marker" style="background: #e74c3c;"></div>
+                                            <div class="lab-info">
+                                                <h4>Mathematics Laboratory</h4>
+                                                <p>Interactive mathematics learning center</p>
+                                                <p><i class="fas fa-users"></i> Capacity: 35 students</p>
+                                            </div>
+                                        </div>
+                                        <div class="floor-lab-item">
+                                            <div class="lab-marker" style="background: #34495e;"></div>
+                                            <div class="lab-info">
+                                                <h4>STEM Laboratory</h4>
+                                                <p>Narayanmurthy Lab - Science, Technology, Engineering & Math</p>
+                                                <p><i class="fas fa-users"></i> Capacity: 25 students</p>
+                                            </div>
+                                        </div>
+                                        <div class="floor-lab-item">
+                                            <div class="lab-marker" style="background: #f1c40f;"></div>
+                                            <div class="lab-info">
+                                                <h4>AV Hall - Pandit Ravishankar Hall</h4>
+                                                <p>Audio-visual presentations and cultural events</p>
+                                                <p><i class="fas fa-users"></i> Capacity: 100 students</p>
                                             </div>
                                         </div>
                                     </div>
