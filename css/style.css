@@ -994,6 +994,71 @@ body {
     margin-right: 5px;
 }
 
+/* Room Hover Tooltip */
+.room-hover-info {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    width: 180px;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    z-index: 100;
+    border: 2px solid var(--secondary);
+}
+
+.room-hover-info.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.hover-scientist-photo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 10px;
+    border: 3px solid var(--accent);
+}
+
+.hover-scientist-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hover-scientist-name {
+    text-align: center;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.hover-lab-name {
+    text-align: center;
+    color: var(--secondary);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Arrow for tooltip */
+.room-hover-info::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px 10px 0;
+    border-style: solid;
+    border-color: var(--card-bg) transparent transparent;
+}
+
 /* About Section */
 .about-content {
     display: grid;
@@ -1249,4 +1314,92 @@ body {
     .floor-tabs {
         flex-direction: column;
     }
+}
+
+/* Update room hover info positioning */
+.room-hover-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    width: 180px;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    z-index: 100;
+    border: 2px solid var(--secondary);
+    transform: none !important; /* Remove any transforms that might interfere */
+}
+
+.room-hover-info.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Remove the existing arrow style if it's causing issues */
+.room-hover-info::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px 10px 0;
+    border-style: solid;
+    border-color: var(--card-bg) transparent transparent;
+}
+
+
+/* Update room sizes and positions */
+.room {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    border: 2px solid transparent;
+    text-align: center;
+    padding: 10px;
+    overflow: hidden;
+}
+
+/* Ensure rooms don't overlap */
+.room:hover {
+    transform: scale(1.05);
+    border-color: var(--secondary);
+    z-index: 10;
+}
+
+.room-label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--primary);
+    font-size: 0.9rem;
+    line-height: 1.2;
+}
+
+.room-info {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* Make building container properly sized */
+.building {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: var(--light);
+    border-radius: 10px;
+    min-height: 400px;
 }

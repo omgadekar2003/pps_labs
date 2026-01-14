@@ -428,7 +428,19 @@
                             <div class="floor-plan">
                                 <div class="floor-visual">
                                     <div class="building">
-                                        <div class="room" style="top: 40%; left: 40%;" data-lab="chemistry">
+                                        <!-- Add this tooltip container -->
+                                        <div class="room-hover-info" id="ground-floor-tooltip">
+                                            <div class="hover-scientist-photo">
+                                                <img src="" alt="Scientist" id="ground-scientist-photo">
+                                            </div>
+                                            <div class="hover-scientist-name" id="ground-scientist-name">Acharya Prafulla Chandra Ray</div>
+                                            <div class="hover-lab-name" id="ground-lab-name">Chemistry Lab</div>
+                                        </div>
+                                        
+                                        <div class="room" style="top: 40%; left: 40%;" 
+                                             data-lab="chemistry" 
+                                             onmouseenter="showRoomInfo('ground-floor', 'chemistry')"
+                                             onmouseleave="hideRoomInfo('ground-floor')">
                                             <div class="room-label">Chemistry Lab</div>
                                             <div class="room-info">Acharya Prafulla Chandra</div>
                                         </div>
@@ -449,25 +461,49 @@
                                 </div>
                             </div>
                         </div>
-
                         <!-- First Floor -->
                         <div id="first-floor" class="floor">
                             <div class="floor-plan">
                                 <div class="floor-visual">
                                     <div class="building">
-                                        <div class="room" style="top: 30%; left: 30%;" data-lab="physics">
+                                        <!-- Add this tooltip container -->
+                                        <div class="room-hover-info" id="first-floor-tooltip">
+                                            <div class="hover-scientist-photo">
+                                                <img src="" alt="Scientist" id="first-scientist-photo">
+                                            </div>
+                                            <div class="hover-scientist-name" id="first-scientist-name"></div>
+                                            <div class="hover-lab-name" id="first-lab-name"></div>
+                                        </div>
+                                        
+                                        <!-- Physics Lab - Top Left -->
+                                        <div class="room" style="top: 20%; left: 20%;" 
+                                             data-lab="physics"
+                                             onmouseenter="showRoomInfo('first-floor', 'physics')"
+                                             onmouseleave="hideRoomInfo('first-floor')">
                                             <div class="room-label">Physics Lab</div>
                                             <div class="room-info">Chandrashekhar Raman</div>
                                         </div>
-                                        <div class="room" style="top: 60%; left: 20%;" data-lab="computer">
+                                        
+                                        <!-- Computer Lab 1 - Top Right -->
+                                        <div class="room" style="top: 20%; left: 60%;" 
+                                             data-lab="computer"
+                                             onmouseenter="showRoomInfo('first-floor', 'computer-jobs')"
+                                             onmouseleave="hideRoomInfo('first-floor')">
                                             <div class="room-label">Computer Lab</div>
                                             <div class="room-info">Steve Jobs Lab</div>
                                         </div>
-                                        <div class="room" style="top: 60%; left: 60%;" data-lab="computer">
+                                        
+                                        <!-- Computer Lab 2 - Bottom Left -->
+                                        <div class="room" style="top: 60%; left: 20%;" 
+                                             data-lab="computer"
+                                             onmouseenter="showRoomInfo('first-floor', 'computer-bhatkar')"
+                                             onmouseleave="hideRoomInfo('first-floor')">
                                             <div class="room-label">Computer Lab</div>
                                             <div class="room-info">Vijay Bhatkar Lab</div>
                                         </div>
-                                        <div class="room" style="top: 30%; left: 60%;" data-lab="library">
+                                        
+                                        <!-- Library - Bottom Right -->
+                                        <div class="room" style="top: 60%; left: 60%;" data-lab="library">
                                             <div class="room-label">Library</div>
                                             <div class="room-info">Ravindranath Tagore</div>
                                         </div>
@@ -500,6 +536,14 @@
                                                 <p><i class="fas fa-users"></i> Capacity: 40 students</p>
                                             </div>
                                         </div>
+                                        <div class="floor-lab-item">
+                                            <div class="lab-marker" style="background: #f39c12;"></div>
+                                            <div class="lab-info">
+                                                <h4>Library</h4>
+                                                <p>Ravindranath Tagore Library - Reading and research area</p>
+                                                <p><i class="fas fa-users"></i> Capacity: 50 students</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -510,19 +554,44 @@
                             <div class="floor-plan">
                                 <div class="floor-visual">
                                     <div class="building">
-                                        <div class="room" style="top: 30%; left: 30%;" data-lab="biology">
+                                        <!-- Add this tooltip container -->
+                                        <div class="room-hover-info" id="second-floor-tooltip">
+                                            <div class="hover-scientist-photo">
+                                                <img src="" alt="Scientist" id="second-scientist-photo">
+                                            </div>
+                                            <div class="hover-scientist-name" id="second-scientist-name"></div>
+                                            <div class="hover-lab-name" id="second-lab-name"></div>
+                                        </div>
+                                        
+                                        <!-- Biology Lab - Top Left -->
+                                        <div class="room" style="top: 20%; left: 20%;" 
+                                             data-lab="biology"
+                                             onmouseenter="showRoomInfo('second-floor', 'biology')"
+                                             onmouseleave="hideRoomInfo('second-floor')">
                                             <div class="room-label">Biology Lab</div>
                                             <div class="room-info">Jagdishchandra Bose</div>
                                         </div>
-                                        <div class="room" style="top: 60%; left: 30%;" data-lab="computer">
+                                        
+                                        <!-- Computer Lab - Top Right -->
+                                        <div class="room" style="top: 20%; left: 60%;" 
+                                             data-lab="computer"
+                                             onmouseenter="showRoomInfo('second-floor', 'computer-gates')"
+                                             onmouseleave="hideRoomInfo('second-floor')">
                                             <div class="room-label">Computer Lab</div>
                                             <div class="room-info">Bill Gates Lab</div>
                                         </div>
-                                        <div class="room" style="top: 45%; left: 60%;" data-lab="sst">
+                                        
+                                        <!-- Social Science Lab - Bottom Left -->
+                                        <div class="room" style="top: 60%; left: 20%;" 
+                                             data-lab="sst"
+                                             onmouseenter="showRoomInfo('second-floor', 'social-science')"
+                                             onmouseleave="hideRoomInfo('second-floor')">
                                             <div class="room-label">SST Lab</div>
                                             <div class="room-info">Social Studies</div>
                                         </div>
-                                        <div class="room" style="top: 75%; left: 60%;" data-lab="av">
+                                        
+                                        <!-- AV Hall - Bottom Right -->
+                                        <div class="room" style="top: 60%; left: 60%;" data-lab="av">
                                             <div class="room-label">AV Hall</div>
                                             <div class="room-info">P. L. Deshpande</div>
                                         </div>
@@ -555,6 +624,14 @@
                                                 <p><i class="fas fa-users"></i> Capacity: 30 students</p>
                                             </div>
                                         </div>
+                                        <div class="floor-lab-item">
+                                            <div class="lab-marker" style="background: #9b59b6;"></div>
+                                            <div class="lab-info">
+                                                <h4>AV Hall - P. L. Deshpande</h4>
+                                                <p>Audio-visual presentations and seminars</p>
+                                                <p><i class="fas fa-users"></i> Capacity: 80 students</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -565,15 +642,35 @@
                             <div class="floor-plan">
                                 <div class="floor-visual">
                                     <div class="building">
-                                        <div class="room" style="top: 30%; left: 30%;" data-lab="math">
+                                        <!-- Add this tooltip container -->
+                                        <div class="room-hover-info" id="third-floor-tooltip">
+                                            <div class="hover-scientist-photo">
+                                                <img src="" alt="Scientist" id="third-scientist-photo">
+                                            </div>
+                                            <div class="hover-scientist-name" id="third-scientist-name"></div>
+                                            <div class="hover-lab-name" id="third-lab-name"></div>
+                                        </div>
+                                        
+                                        <!-- Math Lab - Top Left -->
+                                        <div class="room" style="top: 20%; left: 20%;" 
+                                             data-lab="math"
+                                             onmouseenter="showRoomInfo('third-floor', 'mathematics')"
+                                             onmouseleave="hideRoomInfo('third-floor')">
                                             <div class="room-label">Math Lab</div>
                                             <div class="room-info">Interactive Learning</div>
                                         </div>
-                                        <div class="room" style="top: 60%; left: 30%;" data-lab="stem">
+                                        
+                                        <!-- STEM Lab - Top Right -->
+                                        <div class="room" style="top: 20%; left: 60%;" 
+                                             data-lab="stem"
+                                             onmouseenter="showRoomInfo('third-floor', 'stem')"
+                                             onmouseleave="hideRoomInfo('third-floor')">
                                             <div class="room-label">STEM Lab</div>
                                             <div class="room-info">Narayanmurthy Lab</div>
                                         </div>
-                                        <div class="room" style="top: 45%; left: 60%;" data-lab="av3">
+                                        
+                                        <!-- AV Hall - Bottom Center -->
+                                        <div class="room" style="top: 60%; left: 40%;" data-lab="av3">
                                             <div class="room-label">AV Hall</div>
                                             <div class="room-info">Pandit Ravishankar Hall</div>
                                         </div>

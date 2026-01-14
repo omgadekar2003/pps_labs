@@ -412,6 +412,122 @@ function openWikipedia(url) {
     window.open(url, '_blank', 'noopener,noreferrer');
 }
 
+// Room Hover Info Data
+const roomHoverData = {
+    'chemistry': {
+        photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/%E0%A6%86%E0%A6%A4%E0%A7%8D%E0%A6%AE%E0%A6%9A%E0%A6%B0%E0%A6%BF%E0%A6%A4_%28%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%AB%E0%A7%81%E0%A6%B2%E0%A7%8D%E0%A6%B2%E0%A6%9A%E0%A6%A8%E0%A7%8D%E0%A6%A6%E0%A7%8D%E0%A6%B0_%E0%A6%B0%E0%A6%BE%E0%A6%AF%E0%A6%BC%29_005.tif/lossy-page1-250px-%E0%A6%86%E0%A6%A4%E0%A7%8D%E0%A6%AE%E0%A6%9A%E0%A6%B0%E0%A6%BF%E0%A6%A4_%28%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%AB%E0%A7%81%E0%A6%B2%E0%A7%8D%E0%A6%B2%E0%A6%9A%E0%A6%A8%E0%A7%8D%E0%A6%A6%E0%A7%8D%E0%A6%B0_%E0%A6%B0%E0%A6%BE%E0%A6%AF%E0%A6%BC%29_005.tif.jpg",
+        name: "Acharya Prafulla Chandra Ray",
+        lab: "Chemistry Lab"
+    },
+    'physics': {
+        photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Sir_CV_Raman.JPG/250px-Sir_CV_Raman.JPG",
+        name: "C. V. Raman",
+        lab: "Physics Lab"
+    },
+    'biology': {
+        photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/J.C.Bose.JPG/250px-J.C.Bose.JPG",
+        name: "Jagadish Chandra Bose",
+        lab: "Biology Lab"
+    },
+    'mathematics': {
+        photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Aryabhatta_of_Bihar.jpg/220px-Aryabhatta_of_Bihar.jpg",
+        name: "Aryabhata",
+        lab: "Math Lab"
+    },
+    'social-science': {
+        photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Mahatma-Gandhi%2C_studio%2C_1931.jpg/220px-Mahatma-Gandhi%2C_studio%2C_1931.jpg",
+        name: "Mahatma Gandhi",
+        lab: "Social Science Lab"
+    },
+    'computer-gates': {
+        photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Bill_Gates_2017_%28cropped%29.jpg/220px-Bill_Gates_2017_%28cropped%29.jpg",
+        name: "Bill Gates",
+        lab: "Computer Lab"
+    },
+    'computer-jobs': {
+        photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Steve_Jobs_Headshot_2010-CROP_%28cropped_2%29.jpg/220px-Steve_Jobs_Headshot_2010-CROP_%28cropped_2%29.jpg",
+        name: "Steve Jobs",
+        lab: "Computer Lab"
+    },
+    'computer-bhatkar': {
+        photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Vijay_Bhatkar_Portrait_Photo.jpg/250px-Vijay_Bhatkar_Portrait_Photo.jpg",
+        name: "Vijay Bhatkar",
+        lab: "Computer Lab"
+    },
+    'stem': {
+        photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Narayana_Murthy_CIF_%28cropped%29.JPG/250px-Narayana_Murthy_CIF_%28cropped%29.JPG",
+        name: "N. R. Narayana Murthy",
+        lab: "STEM Lab"
+    }
+};
+
+// Show Room Info on Hover
+// Show Room Info on Hover
+function showRoomInfo(floorId, roomType) {
+    const tooltip = document.getElementById(`${floorId}-tooltip`);
+    const data = roomHoverData[roomType];
+    
+    if (tooltip && data) {
+        // Get floor prefix (ground, first, second, third)
+        const floorPrefix = floorId.split('-')[0];
+        
+        // Update tooltip content
+        const photoElement = document.getElementById(`${floorPrefix}-scientist-photo`);
+        const nameElement = document.getElementById(`${floorPrefix}-scientist-name`);
+        const labElement = document.getElementById(`${floorPrefix}-lab-name`);
+        
+        if (photoElement) photoElement.src = data.photo;
+        if (nameElement) nameElement.textContent = data.name;
+        if (labElement) labElement.textContent = data.lab;
+        
+        // Position tooltip relative to the hovered room
+        const room = event.target.closest('.room');
+        if (room) {
+            // Get room position relative to its parent (.building)
+            const roomRect = room.getBoundingClientRect();
+            const buildingRect = room.parentElement.getBoundingClientRect();
+            const floorRect = document.querySelector(`#${floorId} .floor-visual`).getBoundingClientRect();
+            
+            // Calculate relative position within the floor visual container
+            const roomLeft = roomRect.left - buildingRect.left;
+            const roomTop = roomRect.top - buildingRect.top;
+            
+            // Position tooltip above the room
+            const tooltipHeight = 140; // Approximate tooltip height
+            
+            // Center the tooltip above the room
+            tooltip.style.top = `${roomTop - tooltipHeight - 10}px`;
+            tooltip.style.left = `${roomLeft + (roomRect.width / 2) - 90}px`; // 90 = half of tooltip width (180/2)
+            
+            // Make sure tooltip stays within floor visual bounds
+            const tooltipRect = {
+                left: roomLeft + (roomRect.width / 2) - 90,
+                top: roomTop - tooltipHeight - 10,
+                right: roomLeft + (roomRect.width / 2) + 90,
+                bottom: roomTop - 10
+            };
+            
+            // Adjust if tooltip goes outside left/right bounds
+            if (tooltipRect.left < 10) {
+                tooltip.style.left = '10px';
+            } else if (tooltipRect.right > buildingRect.width - 10) {
+                tooltip.style.left = `${buildingRect.width - 190}px`;
+            }
+        }
+        
+        // Show tooltip
+        tooltip.classList.add('active');
+    }
+}
+
+// Hide Room Info
+function hideRoomInfo(floorId) {
+    const tooltip = document.getElementById(`${floorId}-tooltip`);
+    if (tooltip) {
+        tooltip.classList.remove('active');
+    }
+}
+
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     // Make sure home section is active on load
